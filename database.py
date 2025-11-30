@@ -202,5 +202,10 @@ def init_db():
     cursor.execute("CREATE TABLE IF NOT EXISTS adjacency_list (id INTEGER PRIMARY KEY AUTOINCREMENT, route_id INTEGER, parent INTEGER, child INTEGER, FOREIGN KEY (route_id) REFERENCES routes(id) ON DELETE CASCADE, FOREIGN KEY (parent) REFERENCES nodes(id) ON DELETE CASCADE, FOREIGN KEY (child) REFERENCES nodes(id) ON DELETE CASCADE, UNIQUE(parent,child))")
     #id, route_id (FK route id) parent (FK node id), child (FK node id)
 
+
+    # Sessions / Meditations / Timers / idk TODO
+    #cursor.execute("CREATE TABLE IF NOT EXISTS sessions (id INTEGER PRIMARY KEY)")
+
     db.commit()
     db.close()
+

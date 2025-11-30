@@ -22,18 +22,14 @@ Meditation
 <h2>Most Frequent Sessions</h2>
 
 <ol>
-    {% for id in max %}
-        {% for session in sessions %}
-            {% if session[0] == id %}
-                <li>
-                    {{ session[1] }}
-                    {% if session[2] != "" %}<em>- {{session[2]}}</em>{% endif %}
-                    <small>({{session[4]}} seconds)</small><br>
-                    {% if session[3] != "" %}Tags: {% for tag in session[3] %}{{tag}}, {% endfor %}{% endif %}
-                    Played {{session[5]}} times
-                </li>
-            {% endif %}
-        {% endfor %}
+    {% for session in most_plays %}
+        <li>
+            {{ session[1] }}
+            {% if session[2] != "" %}<em>- {{session[2]}}</em>{% endif %}
+            <small>({{session[4]}} seconds)</small><br>
+            {% if session[3] != "" %}Tags: {% for tag in session[3] %}{{tag}}, {% endfor %}{% endif %}
+            Played {{session[5]}} times
+        </li>
     {% endfor %}
 </ol>
 
@@ -56,6 +52,20 @@ Meditation
     </li>
 {%endfor%}
 </ul>
+
+
+<h2>Create new session</h2>
+
+
+<h2>Save new audio</h2>
+
+
+<h3>Saved audios</h3>
+{% for audio in allaudios %}
+    
+{% endfor %}
+
+
 
 <br>
 <br><hr><br>
