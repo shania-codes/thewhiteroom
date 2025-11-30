@@ -48,7 +48,7 @@ Meditation
         {% if session[2] != "" %}<em>- {{session[2]}}</em>{%endif%}
         <small>({{session[4]}} seconds)</small><br>
         {% if session[3] != "" %}Tags: {% for tag in session[3] %}{{tag}}, {%endfor%}{%endif%}
-        
+        Played {{session[5]}} times
         <form method="post">
             <input hidden name="iforgotwhatthisbuttonwasfor" value="{{session[0]}}">
             <button type="submit">button</button>
