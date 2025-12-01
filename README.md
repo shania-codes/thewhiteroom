@@ -9,6 +9,10 @@ Has features for calories and macro tracking, water tracking, kitchen inventory 
 
 
 # Features
+## Week 14
+Improve Kitchen Inventory so that you can add an item to inventory without saving it's product details just add it once, you might've bought something just to try it once or got it as a gift from someone else.
+
+
 ## Week 13 - Winter Theme:
 What I actually managed to implement:
 Meditation frontend incomplete with placeholder data in Python not actually added to sqlite3 database.  
