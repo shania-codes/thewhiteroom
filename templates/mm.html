@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% block title %}Matrix Multiplication{% endblock %}
+{% block header %}Mathmagician{% endblock %}
+
+
+{% block body %}
+<h2>Matrix Multiplication</h2>
+<br>
+
+<matrix style="display:inline-block;">
+{% for row in range(m1.rows) %}
+    {% for column in range(m1.columns) %}
+        {{m1.matrix[row][column]}}<small>({{row}},{{column}})</small> 
+    {% endfor %}
+    <br>
+{% endfor %}
+</matrix>
+<pre style="display:inline-block;">    x    </pre>
+<matrix style="display:inline-block;">
+{% for row in range(m2.rows) %}
+    {% for column in range(m2.columns) %}
+        {{m2.matrix[row][column]}}<small>({{row}},{{column}})</small> 
+    {% endfor %}
+    <br>
+{% endfor %}
+
+</matrix>
+<pre style="display:inline-block;">    =    </pre>
+<matrix style="display:inline-block;">
+<details><summary>Answer</summary>
+{% for row in range(m3.rows) %}
+    {% for column in range(m3.columns) %}
+        {{m3.matrix[row][column]}}<small>({{row}},{{column}})</small> 
+    {% endfor %}
+    <br>
+{% endfor %}
+</details>
+</matrix>
+<br><br>
+<p>Attempts: {{ attempts }} | Successes: {{ successes }}</p>
+
+<form method="POST" style="display:inline;">
+<input hidden name="mm-correct">
+<button id="correct">Correct</button>
+</form>
+<form method="POST" style="display:inline;">
+<input hidden name="mm-incorrect">
+<button id="correct">Incorrect</button>
+</form>
+<form method="POST" style="display:inline;">
+<input hidden name="mm-reset">
+<button id="reset">Reset</button>
+</form>
+
+{% endblock %}

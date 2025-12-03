@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block title %}Quadratic Differentiation{% endblock %}
+{% block header %}Mathmagician{% endblock %}
+
+
+{% block body %}
+<h2>Easy Quadratic Differentiation</h2>
+<p>Quadratic: {{a}}x^2 + {{b}}x + {{c}}</p>
+<details><summary>Answer</summary>
+<br>
+<p>{{an}}x + {{b}}</p>
+<br>
+</details>
+
+
+<p>Attempts: {{ attempts }} | Successes: {{ successes }}</p>
+
+<form method="POST" style="display:inline;">
+<input hidden name="eqd-correct">
+<button id="correct">Correct</button>
+</form>
+<form method="POST" style="display:inline;">
+<input hidden name="eqd-incorrect">
+<button id="correct">Incorrect</button>
+</form>
+<form method="POST" style="display:inline;">
+<input hidden name="eqd-reset">
+<button id="reset">Reset</button>
+</form>
+
+
+{% endblock %}

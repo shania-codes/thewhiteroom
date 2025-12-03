@@ -5,13 +5,49 @@ Live Demo: http://46.101.90.169:5000/dashboard
 
 <!--
 Has features for calories and macro tracking, water tracking, kitchen inventory tracking (Product details including calories and macros per serving and per 100g and price and purchase location and price per item and servings per item and whether it is a tool or not also it generates a shopping list based on what you have in your inventory and saved products), recipe saving using saved products (not very good yet but it's not done), task management with name, description, and due dates as well as marking as complete or incomplete, self reward system with rewards, punishments, and log entries that don't affect coin balance, interval timers page that allow you to add multiple timers for different breaks, multi user chore management system with steps for the chores and RRULEs for repetition of the chores (work in progress, needs a GUI for generating the RRULEs behind the scene for you), settings page to change saved user data from initial setup page. 
+
+
+# Mathmagician
+Makes practice questions for you and tests you on them.
+Maths is magic ∴ anyone can be a magician.
+![mathmagician_demo](./demos/mathmagician_demo.png)
+## Features  
+- Matrix Multiplication questions and answers  
+- Easy Quadratic Equation Differentiation questions and answers  
+- Save stats (attempts, successes) and reset stats buttons  
+- Separate stats for each exercise  
+- Spellbook design, with index page for different maths  
+- User gains Mana for completing questions and can Rank up to different levels  
+- Flash notifications when completing questions or when ranking up which also shows current mana progress  
+- Different "player models" for different ranks (apprentice.png, etc)  
+### Possible Updates/TODO:  
+- Daily streak bonus xp, logarithmic increase  
+- Rank up animations  
+- Gamified Experience with story telling and RPG elements  
+- Show XP bar increasing animation when completing questions  
+- Graph tracking progres over time  
+- KaTeX rendering https://katex.org/  
+- Hint levels up to the fully explained working out with the numbers used in the question  
+- Speed arithmetic questions for rapid incantation-less casting  
+- Flash mental arithmetic questions  
+- Scratch pad area for notes and drawing  
+- On screen calculators (different types depending on the questions/level/grade basic->scientific->graphing->idk all based on Casio recommended in England)  
+
+- Check if mathmagician_base and base html templates can be merged in some way to not have two base templates or any missing features.
+- Make real art for the different ranks and make rank ups based on quizzes to prove you learnt all pre requisites and can move up (also linked with route)
 -->
 
 
 # Features
 ## Week 14
-Improve Kitchen Inventory so that you can add an item to inventory without saving it's product details just add it once, you might've bought something just to try it once or got it as a gift from someone else.
+Actually done:
+- Update README <-- most important fr
+- 
 
+Goals:
+- Improve Kitchen Inventory so that you can add an item to inventory without saving it's product details just add it once, you might've bought something just to try it once or got it as a gift from someone else.
+- Add Kirinify with updated theming (and think about how twr would listen to music)
+- Add Mathmagician with updated theming (and think of more features and plan a "Route" to learn maths from the foundations up to A-Level (high school) level)
 
 ## Week 13 - Winter Theme:
 What I actually managed to implement:

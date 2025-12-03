@@ -227,3 +227,18 @@ def get_chore_next_occurrences():
     occurrences.sort(key=sort_key)
 
     return occurrences
+
+
+# Mathmagician
+## Get xp and level
+def get_xp_and_level():
+    db = get_db()
+    cursor = db.cursor()
+    cursor.execute("SELECT attempts, successes FROM stats WHERE id = 'xp'")
+    stats = cursor.fetchone()
+    nextlevel = stats[0]
+    currentxp = stats[1]
+    
+    return nextlevel, currentxp
+
+

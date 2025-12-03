@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel&family=Uncial+Antiqua&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<title>{% block title %}Title{% endblock %}</title>
+<style>
+* {
+    margin: 0;
+    background-color: black;
+    color: white;
+    font-family: 'Cinzel', serif;
+}
+ul {
+  list-style: none;
+}
+li {
+  padding: 4px;
+}
+</style>
+
+<style>
+h2, h3 {
+    font-family: 'Uncial Antiqua', cursive;
+}
+.parchment * {
+    background-color: rgb(240, 240, 168);
+    color: black;
+    font-size:xx-large;
+}
+.parchment {
+    border: rgb(179, 179, 117) solid 5px;
+}
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #8b5c3e;
+}
+matrix {
+  font-size:xx-large;
+}
+small {
+  font-size: 0.5em;
+}
+p {
+  font-size:xx-large;
+}
+summary {
+  font-size:xx-large;
+}
+progress {
+  background-color: purple;
+  color:indigo
+}
+</style>
+
+</head>
+
+<body>
+<h1 style="display: inline;"><a href="/">{% block header %}Header{% endblock %}</a></h1>
+
+<hr>
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+<ul style="list-style-type: none;padding-left: 0;width: fit-content;">{# Flashed messages #}
+    {% for message in messages %}
+    <li class="flash-message">{{ message }} <br>Mana: <span style="background-color: rgb(240, 240, 168); color:black;">{{currentxp}} / {{nextlevel}}</span></li>
+    
+    {% endfor %}
+</ul>
+<!-- Flashed message animation -->
+<style>  
+.flash-message {
+  background-color: rgb(240, 240, 168);
+  color: black;
+  border: 1px solid #ccc;
+  padding: 4px;
+  margin-bottom: 6px;
+  font-size: 1.3em;
+  overflow: hidden;
+  animation: fadeout-collapse 5s ease-out forwards;
+}
+
+@keyframes fadeout-collapse {
+  0% {
+    opacity: 1;
+    max-height: 50px;
+    margin-bottom: 6px;
+    padding: 4px;
+  }
+  80% {
+    opacity: 1;
+    max-height: 50px;
+    margin-bottom: 6px;
+    padding: 4px;
+  }
+  100% {
+    opacity: 0;
+    max-height: 0;
+    padding: 0;
+    margin-bottom: 0;
+  }
+}
+</style>
+{% endif %}
+{% endwith %}
+
+{% block body %}
+{% endblock %}
+<br><hr>
+</body>
+</html>

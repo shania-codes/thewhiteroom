@@ -206,6 +206,17 @@ def init_db():
     # Sessions / Meditations / Timers / idk TODO
     #cursor.execute("CREATE TABLE IF NOT EXISTS sessions (id INTEGER PRIMARY KEY)")
 
+
+    # Mathmagician
+    ## stats
+    cursor.execute("CREATE TABLE IF NOT EXISTS stats (attempts INTEGER, successes INTEGER, id TEXT PRIMARY KEY)")
+    ### Initialise stats
+    for identifier in ["mm", "eqd", "eli", "xp"]:     
+        cursor.execute("SELECT * FROM stats WHERE id = ?", (identifier, ))
+        stats = cursor.fetchone()
+        if not stats:
+            cursor.execute("INSERT INTO stats (attempts, successes, id) VALUES (0, 0, ?)", (identifier, ))
+
     db.commit()
     db.close()
 

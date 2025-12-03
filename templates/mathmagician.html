@@ -1,0 +1,31 @@
+{% extends "mathmagician_base.html" %}
+{% block title %}Mathmagician{% endblock %}
+{% block header %}Mathmagician{% endblock %}
+
+
+{% block body %}
+<p style="font-family: 'Trebuchet MS', sans-serif;font-size: x-large;">Maths is magic ∴ anyone can be a magician.</p>
+
+<img src="./static/{{rank}}.png" style="max-height: 200px; max-width: 200px;border: 5px solid">
+<div class="parchment" style="width: fit-content;">
+<h2>Your Rank: {{ rank }}</h2>
+<p>Mana:</p><progress value="{{currentxp}}" max="{{nextlevel}}" style="width:100%;"></progress>
+<p>{{currentxp}} / {{nextlevel}}</p>
+<small style="font-size: x-large;">Complete spells to gain more mana</small>
+</div>
+
+
+<br><h1>Spellbook</h1>
+<div class="parchment" style="width:fit-content">
+<h2>Index</h2>
+<ul style="padding-left: 0;">
+    <h3>Linear Algebra</h3>
+    <li><a href="/mm">Matrix Multiplication</a></li>
+    
+    <h3>Calculus</h3>
+    <li><a href="/eqd">Easy Quadratic Equation Differentiation</a></li>
+    <li><a href="/eli">Easy Linear Equation Integration</a></li>
+</ul>
+</div>
+
+{% endblock %}

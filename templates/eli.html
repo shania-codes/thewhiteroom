@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block title %}Easy Linear Integration{% endblock %}
+{% block header %}Mathmagician{% endblock %}
+
+
+{% block body %}
+<h2>Easy Linear Equation Integration</h2>
+<p>Linear Equation: {{m}}x + {{c}}</p>
+<details><summary>Answer</summary>
+<p>{{mo2}}x^2 + {{c}}x + c</p>
+</details>
+
+
+<p>Attempts: {{ attempts }} | Successes: {{ successes }}</p>
+
+<form method="POST" style="display:inline;">
+<input hidden name="eli-correct">
+<button id="correct">Correct</button>
+</form>
+<form method="POST" style="display:inline;">
+<input hidden name="eli-incorrect">
+<button id="correct">Incorrect</button>
+</form>
+<form method="POST" style="display:inline;">
+<input hidden name="eli-reset">
+<button id="reset">Reset</button>
+</form>
+
+
+{% endblock %}

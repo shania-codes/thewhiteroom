@@ -6,6 +6,7 @@ from food import food_bp
 from health import health_bp
 from management import management_bp
 from errors import errors_bp
+from mathmagician import mathmagician_bp
 
 app = Flask(__name__)
 app.secret_key = "worst_admin"
@@ -18,6 +19,7 @@ app.register_blueprint(food_bp)
 app.register_blueprint(health_bp)
 app.register_blueprint(management_bp)
 app.register_blueprint(errors_bp)
+app.register_blueprint(mathmagician_bp)
 
 os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True) # Make ./static/uploads if it doesn't exist
 
