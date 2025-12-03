@@ -203,7 +203,7 @@ def init_db():
     #id, route_id (FK route id) parent (FK node id), child (FK node id)
 
 
-    # Sessions / Meditations / Timers / idk TODO
+    # Sessions / Meditations / Timers
     #cursor.execute("CREATE TABLE IF NOT EXISTS sessions (id INTEGER PRIMARY KEY)")
 
 
