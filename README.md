@@ -93,29 +93,12 @@ No queue is not a bug it's a feature actually, it's MINDFUL COMPUTING you have t
 - Built in A B testing to see if you can actually tell the difference between compressed and non compressed versions  
 - Support streaming from cloud services and other websites (for example: youtube, onedrive, dropbox etc...)
 
-<!--
+
 Require JS, implement as Userscript in Violentmonkey?
 - Create a music queue and allow you to select multiple songs and add to the queue  
-- Add all songs with a certain tag to queue (aka create playlists)  
+- Add all song
+- As with a certain tag to queue (aka create playlists)  
 - Add all songs with multiple tags to queue (songs with tag1 AND tag2 only)  
--->upload date, file size, and duration  
-- Sort/Filter by upload date, file size, and duration  
-- Delete all songs with a certain tag  
-- Frontend.  
-- Make tags not be case sensitive
-
-- Built in archive button to "delete" songs you don't like anymore (can be undone).  
-- Modify metadata of those files (to change genre and other song details)  
-- Be able to compress songs to lower quality versions  
-- Built in A B testing to see if you can actually tell the difference between compressed and non compressed versions  
-- Support streaming from cloud services and other websites (for example: youtube, onedrive, dropbox etc...)
-
-<!--
-Require JS, implement as Userscript in Violentmonkey?
-- Create a music queue and allow you to select multiple songs and add to the queue  
-- Add all songs with a certain tag to queue (aka create playlists)  
-- Add all songs with multiple tags to queue (songs with tag1 AND tag2 only)  
--->
 -->
 
 
@@ -124,10 +107,12 @@ Require JS, implement as Userscript in Violentmonkey?
 Actually done:
 - Update README <-- most important fr
 - Add Mathmagician with updated theming
+- Add Kirinify
 
-Goals:
+To-Do:
 - Improve Kitchen Inventory so that you can add an item to inventory without saving it's product details just add it once, you might've bought something just to try it once or got it as a gift from someone else.
-- Add Kirinify with updated theming (and think about how twr would listen to music)
+- Update Kirinify CSS
+-
 
 
 ## Week 13 - Winter Theme:
