@@ -33,6 +33,7 @@ Maths is magic ∴ anyone can be a magician.
 - Scratch pad area for notes and drawing  
 - On screen calculators (different types depending on the questions/level/grade basic->scientific->graphing->idk all based on Casio recommended in England)  
 
+- Think of more features and integrate with "Routes" to add a custom route learn maths from the foundations up to A-Level (high school) level)
 - Check if mathmagician_base and base html templates can be merged in some way to not have two base templates or any missing features.
 - Make real art for the different ranks and make rank ups based on quizzes to prove you learnt all pre requisites and can move up (also linked with route)
 -->
@@ -42,12 +43,12 @@ Maths is magic ∴ anyone can be a magician.
 ## Week 14
 Actually done:
 - Update README <-- most important fr
-- 
+- Add Mathmagician with updated theming
 
 Goals:
 - Improve Kitchen Inventory so that you can add an item to inventory without saving it's product details just add it once, you might've bought something just to try it once or got it as a gift from someone else.
 - Add Kirinify with updated theming (and think about how twr would listen to music)
-- Add Mathmagician with updated theming (and think of more features and plan a "Route" to learn maths from the foundations up to A-Level (high school) level)
+
 
 ## Week 13 - Winter Theme:
 What I actually managed to implement:
