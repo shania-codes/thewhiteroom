@@ -217,6 +217,18 @@ def init_db():
         if not stats:
             cursor.execute("INSERT INTO stats (attempts, successes, id) VALUES (0, 0, ?)", (identifier, ))
 
+    
+    # Kirinify 
+    ## Song list
+    cursor.execute("CREATE TABLE IF NOT EXISTS songs (id INTEGER PRIMARY KEY AUTOINCREMENT, filename TEXT NOT NULL)")
+    ## song_tags
+    cursor.execute("CREATE TABLE IF NOT EXISTS song_tags (song_id INTEGER, tag_id INTEGER, FOREIGN KEY (song_id) REFERENCES songs(id), FOREIGN KEY (tag_id) REFERENCES music_tags(id))")
+    ## music_tags
+    cursor.execute("CREATE TABLE IF NOT EXISTS music_tags (id INTEGER PRIMARY KEY AUTOINCREMENT, tag TEXT NOT NULL UNIQUE)")
+
+
+
+    
     db.commit()
     db.close()
 

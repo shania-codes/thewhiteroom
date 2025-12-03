@@ -1,0 +1,138 @@
+{% extends "base.html" %}
+
+{% block title %}
+Kirinify
+{% endblock %}
+
+{% block header %}
+Kirinify - JS-free
+{% endblock %}
+
+
+{% block body %}
+<a href="/dashboard">Back to Dashboard</a><br>
+
+<h2>Upload</h2>
+<form method="post" enctype=multipart/form-data>
+    <input hidden name="form" value="new_song">
+    <label>Audio files</label>
+    <input type="file" name="audio" accept="audio/flac, audio/mp3">
+    <button  type="submit">Submit</button>
+</form>
+
+
+<h2>Filter songs by tags</h2>
+<form method="get">
+    <label>Select Tags:<small>(comma_seperated,case_sensitive)</small></label>
+    <input type="text" name="filter_tag">
+    <select name="match_mode">
+        <option value="any" {%if match_mode == "any"%}selected{%endif%}>Any of these tags</option>
+        <option value="all" {%if match_mode =="all"%}selected{%endif%}>All of these tags</option>
+    </select>
+    <button type="submit">Filter</button>
+</form>
+
+
+{% if filter_tag %}
+<p>
+    Showing songs with 
+    {% if match_mode == 'all' %}
+        <strong>all</strong> of these tags:
+    {% else %}
+        <strong>any</strong> of these tags:
+    {% endif %}
+    "{{ filter_tag }}"
+</p>
+{% endif %}
+
+<br><h2>Songs</h2>
+<ul>
+{% for file in files %}
+    <li id="li{{ loop.index0 }}" style="display:inline;">{{file}}
+    <audio controls src="./static/music/{{file}}"></audio>
+    <form method="post">
+        <input hidden name="form" value="add_tag_to_song">
+        <input hidden name="file" value="{{file}}">
+        <label>Tag name <small>(case-sensitive)</small></label>
+        <input id="tag" type="text" name="tag" required>
+        <button type="submit">Add Tag</button>
+    </form>
+    <form method="post">
+        <input hidden name="form" value="delete_song">
+        <input hidden name="file" value="{{file}}">
+        <button type="submit">Delete Song</button>
+    </form>
+    <form method="get" action="{{url_for('kirinify.download_song', filename=file)}}">
+        <button type="submit">Download Song</button>
+    </form>
+    </li>
+    <br>
+{% endfor %}
+</ul>
+
+
+<br><h2>Tags</h2>
+<ul>
+    {% for tag in tags %}
+    <li>
+        {{tag[1]}}
+        <form method="post" style="display: inline;">
+            <input hidden name="form" value="delete_tag">
+            <input hidden name="tag_id" value="{{tag[0]}}">
+            <button type="submit">Delete Tag</button>
+        </form>
+    </li>
+    {% else %}
+    <li>No tags yet.</li>
+    {% endfor %}
+</ul>
+
+
+<h2>Download All Songs (.zip)</h2>
+<a href="/backup"><button>Download All Songs</button></a>
+
+<div id="kirin" style="position: fixed;bottom: 0;right:0;z-index: -1;">
+    <img src="./static/kirin.png" style="max-width: 350px;">
+</div>
+
+<style>
+    body {
+        background-image: url(./static/background.png);
+        background-repeat: no-repeat;
+        background-position: top right;
+        background-size:contain;
+        max-height: 450px;
+    }
+    button {
+        background-color: orangered;
+        padding: 10px;
+        border-color: yellow;
+        border-radius: 20px;
+        font-weight: bold;
+    }
+    audio {
+        border: solid greenyellow 10px;
+        border-radius: 40px;
+    }
+</style>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br>
+<h2>Top Secret Message</h2>
+<div style="background-color: rgb(206, 141, 0);">
+<p style="border-left: 5px solid red;padding-left: 10px;"> 
+You should not use Spotify because there are better ways to listen to your music.
+Storing your music locally and making backups of it is a better solution which also reduces used bandwidth.
+Furthermore streaming it means you will be listening to your music at a lower quality.
+This is why audiophiles only use wired headphones as wireless devices get the audio streamed to them through bluetooth.
+Using Spotify or other proprietary platforms gives them access to your listening habits, which are then used for targeted advertising and tracking. Self-hosting your library ensures privacy.
+Doing things yourself with self hosting and using libre software allow you full control over your data, software and you can modify everything to be exactly the way you like it.
+Songs often get removed from platforms like Spotify, in this case you will no longer be able to listen to it unless you find it somewhere else, but this will never be a problem if you keep your music on your own devices.
+These websites could also just ban your account if they felt like it, in which case you would lose all your songs and playlists. This is because you agreed to their terms of service and end user license agreement without reading them. These are almost always meant to take away your rights such as the ability to sue them in a class-action lawsuit.
+Also just in case it wasn't obvious, self hosting / local storage means you can listen with NO ADS, WITHOUT PAYING
+Speaking of paying, using things such as bandcamp to pay for songs you like is possible, and they are provided with no DRM and you can even download them before paying usually to see if you actually like the song.
+This way the actual creator gets more money than Spotify pays and sometimes you can get bonuses
+</p>
+</div>
+{% endblock %}

@@ -7,12 +7,19 @@ from health import health_bp
 from management import management_bp
 from errors import errors_bp
 from mathmagician import mathmagician_bp
+from kirinify import kirinify_bp
 
 app = Flask(__name__)
 app.secret_key = "worst_admin"
+
 UPLOAD_FOLDER = "static/uploads"
 ALLOWED_EXTENSIONS = {"png", "jpg", "jpeg", "gif"}
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+
+MUSIC_FOLDER = "static/music"
+os.makedirs(MUSIC_FOLDER, exist_ok=True) # Create upload folder if it doesn't exist
+app.config['MUSIC_FOLDER'] = MUSIC_FOLDER
+
 
 app.register_blueprint(isd_bp)
 app.register_blueprint(food_bp)
@@ -20,6 +27,7 @@ app.register_blueprint(health_bp)
 app.register_blueprint(management_bp)
 app.register_blueprint(errors_bp)
 app.register_blueprint(mathmagician_bp)
+app.register_blueprint(kirinify_bp)
 
 os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True) # Make ./static/uploads if it doesn't exist
 

@@ -1,5 +1,7 @@
 from database import get_db
 from datetime import datetime
+import os
+
 
 
 # Database Functions
@@ -242,3 +244,62 @@ def get_xp_and_level():
     return nextlevel, currentxp
 
 
+# Kirinify
+MUSIC_FOLDER = "static/music"
+ALLOWED_MUSIC_EXTENSIONS = {"flac", "mp3"} # https://en.wikipedia.org/wiki/Audio_file_format https://www.iana.org/assignments/media-types/media-types.xhtml#audio
+
+# WARNING: Same name as image allowed file function in app.py
+def allowed_file(filename):
+    return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_MUSIC_EXTENSIONS
+
+def get_uploaded_files():
+    files = []
+    for filename in os.listdir(MUSIC_FOLDER):
+        if allowed_file(filename):
+            files.append(filename)
+    return files
+
+def get_all_tags():
+    db = get_db()
+    cursor = db.cursor()
+    cursor.execute("SELECT id, tag FROM music_tags")
+    tags = cursor.fetchall()
+    db.close()
+    return tags
+
+def get_songs_by_tags(tags): # Includes all songs with any 1 of the tags
+    db = get_db()
+    cursor = db.cursor()
+
+    placeholders = ",".join("?" * len(tags))
+
+    query = f"""
+        SELECT DISTINCT s.filename 
+        FROM songs s
+        JOIN song_tags st ON s.id = st.song_id
+        JOIN music_tags t ON st.tag_id = t.id
+        WHERE t.tag IN ({placeholders})
+    """
+    cursor.execute(query, tags)
+    results = [row[0] for row in cursor.fetchall()]
+    db.close()
+    return results
+
+def get_songs_by_multiple_tags(tags): # Includes songs with all selected tags
+    db = get_db()
+    cursor = db.cursor()
+
+    placeholders = ",".join("?" * len(tags))
+    query = f"""
+        SELECT s.filename
+        FROM songs s
+        JOIN song_tags st ON s.id = st.song_id
+        JOIN music_tags t ON st.tag_id = t.id
+        WHERE t.tag IN ({placeholders})
+        GROUP BY s.id
+        HAVING COUNT(DISTINCT t.tag) = ?
+    """
+    cursor.execute(query, (*tags, len(tags)))
+    results = [row[0] for row in cursor.fetchall()]
+    db.close()
+    return results
