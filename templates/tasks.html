@@ -35,12 +35,12 @@ No tasks
 
 <!--
 Tasks Schema update to support habits (repeating tasks)
+id
 Name
-Date and Time starts
-Date and Time ends
+Description
 
 RRULE column + frontend to generate the rrule (none if it is a task not a habit aka it doesn't repeat):
-Repeat {
+Repeat:
     Every Day: RRULE:FREQ=DAILY;
     Every Week: RRULE:FREQ=WEEKLY;
     Every Month: RRULE:FREQ=MONTHLY;
@@ -51,12 +51,13 @@ Repeat {
         Every n month(s) each nth of the month (ex: Every other month on the 5th: RRULE:FREQ=MONTHLY;INTERVAL=2;BYMONTHDAY=5; ) 
         OR Every n month(s) on the (1st/2nd/3rd/4th/last) (M/Tu/W/Th/F/Sa/Su): for example every 3 months on the 1st Monday: RRULE:FREQ=MONTHLY;INTERVAL=3;BYDAY=MO;BYSETPOS=1;
     }
-}
 End of repeating: never, after n times, on date {
 never stops repeating: no changes
 after n occurences: COUNT=10;
 on date: UNTIL=20251231T000000Z;
 }
+
+note: how can I make these appear does this work with a non web app when using a framework as a client device instead of a mobile phone.
 Reminder 1: None, n minutes before, n hours before, n days before, at time of event
 Reminder 2: same as above # note: can I make it have unlimited reminders?
 
@@ -64,7 +65,7 @@ other data for scheduled events:
 Invitees: stores names and phone numbers, can be used to store xmpp and simplex and session too, I think it auto sends invites to any contacts you put in here
 Attachment: a file
 URL like a teams meeting link I guess
-Location (support adding, "go shopping" with a certain store and it already knows how much money you will spend on groceries and what it is you should buy since it knows whats in your kitchen and what you ran out of and what you want to buy again and where you bought it and how much it costs)
+Location 
 -->
 
 

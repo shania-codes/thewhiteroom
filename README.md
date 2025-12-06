@@ -1,5 +1,7 @@
 # The White Room
-> An all-in-one Self Management Framework
+> The everything app, to use your (Framework) laptop as a smart phone replacement  
+
+(doesn't including emails or actual ability to make phone calls and text messages, or navigation which you can do in other ways much better already on a laptop, but pretty much every other usecase for a smart phone has been eliminated so you can use a dumbphone + laptop instead of a smartphone and merged into this **self-hosted, libre and, extensible alternative.)
 
 Live Demo: http://46.101.90.169:5000/dashboard
 
@@ -99,16 +101,25 @@ Require JS, implement as Userscript in Violentmonkey?
 - Add all song
 - As with a certain tag to queue (aka create playlists)  
 - Add all songs with multiple tags to queue (songs with tag1 AND tag2 only)  
+
+
+
+# Tasks
+(support adding, "go shopping" with a certain store and it already knows how much money you will spend on groceries and what it is you should buy since it knows whats in your kitchen and what you ran out of and what you want to buy again and where you bought it and how much it costs)
 -->
 
 
 # Features
-## Week 14 - Add habits to task tracker and start Entertainment Tracker and combine previous projects (Mathmagician and Kirinify) into this projects
+## Week 14
 Actually done:
 - Update README
 - Add Mathmagician with updated theming (previous weeks project merged into this project)
 - Add Kirinify (previous weeks project merged into this project)
-- Add recurrecing tasks (Habits) to Tasks feature (WIP)
+- Update schema to support recurrecing tasks (Habits) to Tasks feature (WIP)
+- Add list of ideas for routes in routes page
+- Have three more ideas written about in the following to do list (they came to me in a dream, divine intellect)
+- Bug Fixes
+- Buy 6 mercenaries and be left with 0 coins
 
 To-Do:
 - Improve Kitchen Inventory so that you can add an item to inventory without saving it's product details just add it once, you might've bought something just to try it once or got it as a gift from someone else.
@@ -116,7 +127,7 @@ To-Do:
 - Fix README including adding media tracker or merging it if it already exists: "This allows you to set a specific time to play and watch what you want to watch."
 - Write readme for new feature idea: RSS client that allows you to view the content with your own custom css (this probably already exists) BUT the innovation is that you can mark the blog or website or whatever it is, as a contact you know and then it will add buttons for you to contact them such as phone number or email or session or simplex or xmpp and you can add none or all or juts one of those as the contact details you have for that person and if they blogpost you can easily contact them, this is like social media but not bad for you (decentralised since it just uses rss that you have to subscribe too and they can self host) and xmpp and email are decentralised and can be encrypted too.
 - Write readme for new feature idea: Content tracker that supports games, film and tv and shows and yt(rss so you don't have to make an account and yt-dlp so it can download the videos for you to watch them with no ads without needing to use command line to do it manually and this way you can customise the frontend too, add custom user css feature), twitch and other live streaming platforms (if possible tell you when they are live or when you expect them to be live and add it to schedule feature so you check if they are live or not) 
-- Update journal section if I added it or if not write that readme section: Journal that can be used like obsidian to write markdown which renders every line to markdown except when you are typing on it it shows the plaintext in the style of rendered markdown (not sure how to explain it) but every other libre alternative uses the two pane view which I don't like I prefer the minimal gui and one pane view of obsidian however it is non-free. furthermore also make it useable as a diary / journal of sorts with images too and infinite scrolling to just read it in chronological order (latest to oldest)
+- Update journal section if I added it or if not write that readme section: Journal that can be used like obsidian to write markdown which renders every line to markdown except when you are typing on it it shows the plaintext in the style of rendered markdown (not sure how to explain it) but every other libre alternative uses the two pane view which I don't like I prefer the minimal gui and one pane view of obsidian however it is non-free. Furthermore also make it useable as a diary / journal of sorts with images too and infinite scrolling to just read it in chronological order (latest to oldest) like a diary.
 
 ## Week 13 - Winter Theme:
 What I actually managed to implement:

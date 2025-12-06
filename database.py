@@ -125,8 +125,6 @@ def init_db():
         due_date TEXT,
         is_complete INTEGER NOT NULL DEFAULT 0,
         description TEXT,
-        start_datetime INTEGER DEFAULT NULL,
-        end_datetime INTEGER DEFAULT NULL,
         rrule TEXT DEFAULT NULL,
         reminder1_datetime INTEGER DEFAULT NULL,
         reminder2_datetime INTEGER DEFAULT NULL,
