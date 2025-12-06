@@ -124,7 +124,16 @@ def init_db():
         name TEXT NOT NULL,
         due_date TEXT,
         is_complete INTEGER NOT NULL DEFAULT 0,
-        description TEXT)""")         
+        description TEXT,
+        start_datetime INTEGER DEFAULT NULL,
+        end_datetime INTEGER DEFAULT NULL,
+        rrule TEXT DEFAULT NULL,
+        reminder1_datetime INTEGER DEFAULT NULL,
+        reminder2_datetime INTEGER DEFAULT NULL,
+        attatchment TEXT DEFAULT NULL,
+        url TEXT DEFAULT NULL,
+        location TEXT DEFAULT NULL
+        )""")         
     ## reward_user(s)
     cursor.execute("""
         CREATE TABLE IF NOT EXISTS reward_user (

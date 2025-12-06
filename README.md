@@ -103,12 +103,12 @@ Require JS, implement as Userscript in Violentmonkey?
 
 
 # Features
-## Week 14 - Anything
+## Week 14 - Add habits to task tracker and start Entertainment Tracker and combine previous projects (Mathmagician and Kirinify) into this projects
 Actually done:
-- Update README <-- most important fr
+- Update README
 - Add Mathmagician with updated theming (previous weeks project merged into this project)
 - Add Kirinify (previous weeks project merged into this project)
-- Added comment in tasks.html which lists the options for adding events and reminders to your calendar on iOS in Apple Calendar, this is so I can add repeating tasks into tasks aka Habits, an important pre cursor to my routes feature, since currently you can only add text and tasks.
+- Add recurrecing tasks (Habits) to Tasks feature (WIP)
 
 To-Do:
 - Improve Kitchen Inventory so that you can add an item to inventory without saving it's product details just add it once, you might've bought something just to try it once or got it as a gift from someone else.

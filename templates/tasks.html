@@ -34,40 +34,37 @@ No tasks
 
 
 <!--
-Events (Reminders are the same but are seperated into lists instead of on a calendar) 
+Tasks Schema update to support habits (repeating tasks)
 Name
-Location
+Date and Time starts
+Date and Time ends
 
-iCloud Calendar repeater options:
-
-Calendar: for example: Birthdays, Work Schedule, Personal Calendar etc
-All-Day binary: if 1, don't need to check for time starts and time ends
-(date and) Time starts
-(date and) Time ends
+RRULE column + frontend to generate the rrule (none if it is a task not a habit aka it doesn't repeat):
 Repeat {
-    0 - never
-    Every Day
-    Every Week
-    Every Month
-    Every Year (same date every year)
+    Every Day: RRULE:FREQ=DAILY;
+    Every Week: RRULE:FREQ=WEEKLY;
+    Every Month: RRULE:FREQ=MONTHLY;
+    Every Year (same date every year): RRULE:FREQ=YEARLY;
     Custom: {
-        Daily: Every n Day(s)
-        Weekly: Every n Weeks on (these) days For example: Every Monday every 2 weeks 
-        Every n month(s) each nth of the month (ex: Every other month on the 5th) OR Every n month(s) on the (1st/2nd/3rd/4th/last) (M/Tu/W/Th/F/Sa/Su)
+        Daily: Every n Day(s): RRULE:FREQ=DAILY;INTERVAL=n;
+        Weekly: Every n Weeks on (these) days For example: Every Monday every 2 weeks: RRULE:FREQ=WEEKLY;INTERVAL=2;BYDAY=MO,TH;
+        Every n month(s) each nth of the month (ex: Every other month on the 5th: RRULE:FREQ=MONTHLY;INTERVAL=2;BYMONTHDAY=5; ) 
+        OR Every n month(s) on the (1st/2nd/3rd/4th/last) (M/Tu/W/Th/F/Sa/Su): for example every 3 months on the 1st Monday: RRULE:FREQ=MONTHLY;INTERVAL=3;BYDAY=MO;BYSETPOS=1;
     }
 }
-End of repeating: never, after n times, on date
+End of repeating: never, after n times, on date {
+never stops repeating: no changes
+after n occurences: COUNT=10;
+on date: UNTIL=20251231T000000Z;
+}
 Reminder 1: None, n minutes before, n hours before, n days before, at time of event
-Reminder 2: same as above # note: can I make it have unlimited reminders and beat Apoole
+Reminder 2: same as above # note: can I make it have unlimited reminders?
 
 other data for scheduled events:
 Invitees: stores names and phone numbers, can be used to store xmpp and simplex and session too, I think it auto sends invites to any contacts you put in here
-Attachments: files
-URL
-Notes
-
-
-I'm pretty sure this is based on RRULEs
+Attachment: a file
+URL like a teams meeting link I guess
+Location (support adding, "go shopping" with a certain store and it already knows how much money you will spend on groceries and what it is you should buy since it knows whats in your kitchen and what you ran out of and what you want to buy again and where you bought it and how much it costs)
 -->
 
 
