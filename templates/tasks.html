@@ -33,4 +33,42 @@ No tasks
 </form>
 
 
+<!--
+Events (Reminders are the same but are seperated into lists instead of on a calendar) 
+Name
+Location
+
+iCloud Calendar repeater options:
+
+Calendar: for example: Birthdays, Work Schedule, Personal Calendar etc
+All-Day binary: if 1, don't need to check for time starts and time ends
+(date and) Time starts
+(date and) Time ends
+Repeat {
+    0 - never
+    Every Day
+    Every Week
+    Every Month
+    Every Year (same date every year)
+    Custom: {
+        Daily: Every n Day(s)
+        Weekly: Every n Weeks on (these) days For example: Every Monday every 2 weeks 
+        Every n month(s) each nth of the month (ex: Every other month on the 5th) OR Every n month(s) on the (1st/2nd/3rd/4th/last) (M/Tu/W/Th/F/Sa/Su)
+    }
+}
+End of repeating: never, after n times, on date
+Reminder 1: None, n minutes before, n hours before, n days before, at time of event
+Reminder 2: same as above # note: can I make it have unlimited reminders and beat Apoole
+
+other data for scheduled events:
+Invitees: stores names and phone numbers, can be used to store xmpp and simplex and session too, I think it auto sends invites to any contacts you put in here
+Attachments: files
+URL
+Notes
+
+
+I'm pretty sure this is based on RRULEs
+-->
+
+
 {% endblock %}
