@@ -103,7 +103,7 @@ Require JS, implement as Userscript in Violentmonkey?
 
 
 # Features
-## Week 14
+## Week 14 - Anything
 Actually done:
 - Update README <-- most important fr
 - Add Mathmagician with updated theming
@@ -112,8 +112,10 @@ Actually done:
 To-Do:
 - Improve Kitchen Inventory so that you can add an item to inventory without saving it's product details just add it once, you might've bought something just to try it once or got it as a gift from someone else.
 - Update Kirinify CSS
--
-
+- Fix README including adding media tracker or merging it if it already exists: "This allows you to set a specific time to play and watch what you want to watch."
+- Write readme for new feature idea: RSS client that allows you to view the content with your own custom css (this probably already exists) BUT the innovation is that you can mark the blog or website or whatever it is, as a contact you know and then it will add buttons for you to contact them such as phone number or email or session or simplex or xmpp and you can add none or all or juts one of those as the contact details you have for that person and if they blogpost you can easily contact them, this is like social media but not bad for you (decentralised since it just uses rss that you have to subscribe too and they can self host) and xmpp and email are decentralised and can be encrypted too.
+- Write readme for new feature idea: Content tracker that supports games, film and tv and shows and yt(rss so you don't have to make an account and yt-dlp so it can download the videos for you to watch them with no ads without needing to use command line to do it manually and this way you can customise the frontend too, add custom user css feature), twitch and other live streaming platforms (if possible tell you when they are live or when you expect them to be live and add it to schedule feature so you check if they are live or not) 
+- Update journal section if I added it or if not write that readme section: Journal that can be used like obsidian to write markdown which renders every line to markdown except when you are typing on it it shows the plaintext in the style of rendered markdown (not sure how to explain it) but every other libre alternative uses the two pane view which I don't like I prefer the minimal gui and one pane view of obsidian however it is non-free. furthermore also make it useable as a diary / journal of sorts with images too and infinite scrolling to just read it in chronological order (latest to oldest)
 
 ## Week 13 - Winter Theme:
 What I actually managed to implement:
@@ -128,9 +130,9 @@ Support for linear progression routines (like starting strength and routines ins
 
 ### Running
 Support for GPS data from smart watches.
-If possible, this is just the readme with my ideas, it will:
+If possible it will:
 - Shows where you ran assuming GPS data can do that, 
-- Your pace (km/h and min/km no option for miles), 
+- Your pace (km/h and min/km, no option for using miles instead), 
 - Heart rate if that is included in the file format
 - Step count
 - Distance (km only)
